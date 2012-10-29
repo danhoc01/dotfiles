@@ -12,6 +12,7 @@ Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
 Bundle 'vim-scripts/pep8'
 Bundle 'fs111/pydoc.vim'
+Bundle 'tpope/vim-fugitive'
 "}}}
 
 " Required
