@@ -1,0 +1,31 @@
+" Preamble
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"}}}
+
+" Bundles! `vim +BundleInstall +qall` at cli
+Bundle 'gmarik/vundle'
+Bundle 'sontek/minibufexpl.vim'
+Bundle 'ervandew/supertab'
+Bundle 'wincent/Command-T'
+Bundle 'vim-scripts/pep8'
+Bundle 'fs111/pydoc.vim'
+"}}}
+
+" Required
+filetype plugin indent on
+" }}}
+
+" Basic options
+syntax on
+filetype on
+filetype plugin indent on
+
+set cursorline
+
+" Key mappings
+let mapleader = "," 
+let g:pep8_map='<leader>8'
+
