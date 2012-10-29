@@ -10,10 +10,12 @@ Bundle 'gmarik/vundle'
 Bundle 'sontek/minibufexpl.vim'
 Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
-Bundle 'vim-scripts/pep8'
 Bundle 'fs111/pydoc.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'fs111/pydoc.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'nvie/vim-flake8'
+Bundle 'mitechie/pyflakes-pathogen'
+Bundle 'hynek/vim-python-pep8-indent'
 "}}}
 
 " Required
@@ -26,8 +28,43 @@ filetype on
 filetype plugin indent on
 
 set cursorline
+set laststatus=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set textwidth=80
+set colorcolumn=80
+
+" Use sane regexes.
+nnoremap / /\v
+vnoremap / /\v
+
+" Colors
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 
 " Key mappings
 let mapleader = "," 
 let g:pep8_map='<leader>8'
 
+" Python autocompletion
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+" }}}
+
+" Quickfix fix
+let g:pyflakes_use_quickfix = 0
+
+" QuickFix {{{
+
+augroup ft_quickfix
+    au!
+        au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap tw=0
+        augroup END
+
+" }}}
+"
